@@ -72,8 +72,8 @@
 	"VID":
 	[
 		{"name":"Version ID", "type":"ID", "nho_name":"ver_id"},
-		{"name":"Internationalization Code", "type":"CE", "nho_name":"inter_cd"},
-		{"name":"International Version ID", "type":"CE", "nho_name":"inter_ver_id"}
+		{"name":"Internationalization Code", "type":"CWE", "nho_name":"inter_cd"},
+		{"name":"International Version ID", "type":"CWE", "nho_name":"inter_ver_id"}
 	],
 	"XCN":
 	[
@@ -92,7 +92,7 @@
 		{"name":"Identifier Type Code", "type":"ID", "nho_name":"id_type_cd"},
 		{"name":"Assigning Facility", "type":"HD", "nho_name":"assign_facility"},
 		{"name":"Name Representation Code", "type":"ID", "nho_name":"nm_represent_cd"},
-		{"name":"Name Context", "type":"CE", "nho_name":"nm_cntext"},
+		{"name":"Name Context", "type":"CWE", "nho_name":"nm_cntext"},
 		{"name":"Name Validity Range", "type":"DR", "nho_name":"nm_valid_range"},
 		{"name":"Name Assembly Order", "type":"ID", "nho_name":"nm_assembly_order"},
 		{"name":"Effective Date", "type":"TS", "nho_name":"effective_date"},
@@ -124,7 +124,7 @@
 		{"name":"Degree (e.g., MD)", "type":"IS", "nho_name":"degree"},
 		{"name":"Name Type Code", "type":"ID", "nho_name":"nm_type_cd"},
 		{"name":"Name Representation Code", "type":"ID", "nho_name":"nm_represent_cd"},
-		{"name":"Name Context", "type":"CE", "nho_name":"nm_cntext"},
+		{"name":"Name Context", "type":"CWE", "nho_name":"nm_cntext"},
 		{"name":"Name Validity Range", "type":"DR", "nho_name":"nm_valid_range"},
 		{"name":"Name Assembly Order", "type":"ID", "nho_name":"nm_assembly_order"},
 		{"name":"Effective Date", "type":"TS", "nho_name":"effective_date"},
@@ -214,7 +214,7 @@
 	"CQ":
 	[
 		{"name":"Quantity", "type":"NM", "nho_name":"quant_nm"},
-		{"name":"Units", "type":"CE", "nho_name":"units"}
+		{"name":"Units", "type":"CWE", "nho_name":"units"}
 	],
 	"LA2":
 	[
@@ -257,26 +257,26 @@
 	],
 	"FN":
 	[
-		{"name":"Surname", "type":"ST", "nho_name":"surname,"},
-		{"name":"Own Surname Prefix", "type":"ST", "nho_name":"o_surname_pre,"},
-		{"name":"Own Surname", "type":"ST", "nho_name":"o_surname,"},
-		{"name":"Surname Prefix From Partner/Spouse", "type":"ST", "nho_name":"p_surname_pre,"},
+		{"name":"Surname", "type":"ST", "nho_name":"surname"},
+		{"name":"Own Surname Prefix", "type":"ST", "nho_name":"o_surname_pre"},
+		{"name":"Own Surname", "type":"ST", "nho_name":"o_surname"},
+		{"name":"Surname Prefix From Partner/Spouse", "type":"ST", "nho_name":"p_surname_pre"},
 		{"name":"Surname From Partner/Spouse", "type":"ST", "nho_name":"p_surname"}
 	],
 	"SAD":
 	[
-		{"name":"Street or Mailing Address", "type":"ST", "nho_name":"street_add,"},
-		{"name":"Street Name", "type":"ST", "nho_name":"street_nm,"},
+		{"name":"Street or Mailing Address", "type":"ST", "nho_name":"street_add"},
+		{"name":"Street Name", "type":"ST", "nho_name":"street_nm"},
 		{"name":"Dwelling Number", "type":"ST", "nho_name":"dwell_number"}
 	],
 	"SPS":
 	[
-		{"name":"Specimen Source Name or Code", "type":"CWE", "nho_name":"spec_src_nm,"},
-		{"name":"Additives", "type":"CWE", "nho_name":"additives,"},
-		{"name":"Specimen Collection Method", "type":"TX", "nho_name":"spec_collect_method,"},
-		{"name":"Body Site", "type":"CWE", "nho_name":"body_site,"},
-		{"name":"Site Modifier", "type":"CWE", "nho_name":"site_modifier,"},
-		{"name":"Collection Method Modifier Code", "type":"CWE", "nho_name":"collect_mod_cd,"},
+		{"name":"Specimen Source Name or Code", "type":"CWE", "nho_name":"spec_src_nm"},
+		{"name":"Additives", "type":"CWE", "nho_name":"additives"},
+		{"name":"Specimen Collection Method", "type":"TX", "nho_name":"spec_collect_method"},
+		{"name":"Body Site", "type":"CWE", "nho_name":"body_site"},
+		{"name":"Site Modifier", "type":"CWE", "nho_name":"site_modifier"},
+		{"name":"Collection Method Modifier Code", "type":"CWE", "nho_name":"collect_mod_cd"},
 		{"name":"Specimen Role", "type":"CWE", "nho_name":"spec_role"}
 	],
 	"DLN":
@@ -307,7 +307,7 @@
 		{"name":"Price Type", "type":"ID", "nho_name":""},
 		{"name":"From Value", "type":"NM", "nho_name":""},
 		{"name":"To Value", "type":"NM", "nho_name":""},
-		{"name":"Range Units", "type":"CE", "nho_name":""},
+		{"name":"Range Units", "type":"CWE", "nho_name":""},
 		{"name":"Range Type", "type":"ID", "nho_name":""}
 	],
 	"TQ":
@@ -340,11 +340,11 @@
 	"MOC":
 	[
 		{"name":"Monetary Amount", "type":"MO", "nho_name":""},
-		{"name":"Charge Code", "type":"CE", "nho_name":""}
+		{"name":"Charge Code", "type":"CWE", "nho_name":""}
 	],
 	"PRL":
 	[
-		{"name":"Parent Observation Identifier", "type":"CE", "nho_name":""},
+		{"name":"Parent Observation Identifier", "type":"CWE", "nho_name":""},
 		{"name":"Parent Observation Sub-identifier", "type":"ST", "nho_name":""},
 		{"name":"Parent Observation Value Descriptor", "type":"TX", "nho_name":""}
 	],
