@@ -1,0 +1,395 @@
+{
+	"ST":"str",
+	"TX":"str",
+	"FT":"str",
+	"NM":"num",
+	"IS":"str",
+	"ID":"str",
+	"DT":"str",
+	"TM":"str",
+	"DTM":"str",
+	"SI":"str",
+	"HD":
+	[
+		{"name":"Namespace ID", "type":"IS", "nho_name":"namespace_id"},
+		{"name":"Universal ID", "type":"ST", "nho_name":"univ_id"},
+		{"name":"Universal ID Type", "type":"ID", "nho_name":"univ_id_type"}
+	],
+	"CE":
+	[
+		{"name":"Identifier", "type":"ST", "nho_name":"id"},
+		{"name":"Text", "type":"ST", "nho_name":"txt"},
+		{"name":"Name of Coding System", "type":"ID", "nho_name":"nm_cs"},
+		{"name":"Alternate Identifier", "type":"ST", "nho_name":"id_alt"},
+		{"name":"Alternate Text", "type":"ST", "nho_name":"txt_alt"},
+		{"name":"Name of Alternate Coding System", "type":"ID", "nho_name":"nm_cs_alt"}
+	],
+	"CNE":
+	[
+		{"name":"Identifier", "type":"ST", "nho_name":"id"},
+		{"name":"Text", "type":"ST", "nho_name":"txt"},
+		{"name":"Name of Coding System", "type":"ID", "nho_name":"nm_cs"},
+		{"name":"Alternate Identifier", "type":"ST", "nho_name":"id_alt"},
+		{"name":"Alternate Text", "type":"ST", "nho_name":"txt_alt"},
+		{"name":"Name of Alternate Coding System", "type":"ID", "nho_name":"nm_cs_alt"},
+		{"name":"Coding System Version ID", "type":"ST", "nho_name":"cs_ver_id"},
+		{"name":"Alternate Coding System Version ID", "type":"ST", "nho_name":"cs_ver_id_alt"},
+		{"name":"Original Text", "type":"ST", "nho_name":"orgin_txt"}
+	],
+	"CWE":
+	[
+		{"name":"Identifier", "type":"ST", "nho_name":"id"},
+		{"name":"Text", "type":"ST", "nho_name":"txt"},
+		{"name":"Name of Coding System", "type":"ID", "nho_name":"nm_cs"},
+		{"name":"Alternate Identifier", "type":"ST", "nho_name":"id_alt"},
+		{"name":"Alternate Text", "type":"ST", "nho_name":"txt_alt"},
+		{"name":"Name of Alternate Coding System", "type":"ID", "nho_name":"nm_cs_alt"},
+		{"name":"Coding System Version ID", "type":"ST", "nho_name":"cs_ver_id"},
+		{"name":"Alternate Coding System Version ID", "type":"ST", "nho_name":"cs_ver_id_alt"},
+		{"name":"Original Text", "type":"ST", "nho_name":"orgin_txt"}
+	],
+	"TS":
+	[
+		{"name":"Time", "type":"DTM", "nho_name":"time"},
+		{"name":"Degree of Precision", "type":"ID", "nho_name":"precision"}
+	],
+	"DR":
+	[
+		{"name":"Range Start Date/Time", "type":"TS", "nho_name":"time_start"},
+		{"name":"Range End Date/Time", "type":"TS", "nho_name":"time_end"}
+	],
+	"MSG":
+	[
+		{"name":"Message Code", "type":"ID", "nho_name":"msg_type"},
+		{"name":"Trigger Event", "type":"ID", "nho_name":"trigger_evnt"},
+		{"name":"Message Structure", "type":"ID", "nho_name":"msg_structure"}
+	],
+	"PT":
+	[
+		{"name":"Processing ID", "type":"ID", "nho_name":"proc_id"},
+		{"name":"Processing Mode", "type":"ID", "nho_name":"proc_md"}
+	],
+	"VID":
+	[
+		{"name":"Version ID", "type":"ID", "nho_name":"ver_id"},
+		{"name":"Internationalization Code", "type":"CWE", "nho_name":"inter_cd"},
+		{"name":"International Version ID", "type":"CWE", "nho_name":"inter_ver_id"}
+	],
+	"XCN":
+	[
+		{"name":"ID Number", "type":"ST", "nho_name":"id"},
+		{"name":"Family Name", "type":"FN", "nho_name":"f_nm"},
+		{"name":"Given Name", "type":"ST", "nho_name":"g_nm"},
+		{"name":"Second and Further Given Names or Initials Thereof", "type":"ST", "nho_name":"2nd_nm"},
+		{"name":"Suffix (e.g., JR or III)", "type":"ST", "nho_name":"suffix"},
+		{"name":"Prefix (e.g., DR)", "type":"ST", "nho_name":"prefix"},
+		{"name":"Degree (e.g., MD)", "type":"IS", "nho_name":"degree"},
+		{"name":"Source Table", "type":"IS", "nho_name":"src_tbl"},
+		{"name":"Assigning Authority", "type":"HD", "nho_name":"assign_authority"},
+		{"name":"Name Type Code", "type":"ID", "nho_name":"nm_type_cd"},
+		{"name":"Identifier Check Digit", "type":"ST", "nho_name":"id_chk_digit"},
+		{"name":"Check Digit Scheme", "type":"ID", "nho_name":"chk_digit_scheme"},
+		{"name":"Identifier Type Code", "type":"ID", "nho_name":"id_type_cd"},
+		{"name":"Assigning Facility", "type":"HD", "nho_name":"assign_facility"},
+		{"name":"Name Representation Code", "type":"ID", "nho_name":"nm_represent_cd"},
+		{"name":"Name Context", "type":"CWE", "nho_name":"nm_cntext"},
+		{"name":"Name Validity Range", "type":"DR", "nho_name":"nm_valid_range"},
+		{"name":"Name Assembly Order", "type":"ID", "nho_name":"nm_assembly_order"},
+		{"name":"Effective Date", "type":"TS", "nho_name":"effective_date"},
+		{"name":"Expiration Date", "type":"TS", "nho_name":"expire_date"},
+		{"name":"Professional Suffix", "type":"ST", "nho_name":"pro_suffix"},
+		{"name":"Assigning Jurisdiction", "type":"CWE", "nho_name":"assign_jurisdict"},
+		{"name":"Assigning Agency or Department", "type":"CWE", "nho_name":"assign_dpt"}
+	],
+	"CX":
+	[
+		{"name":"ID Number", "type":"ST", "nho_name":"id"},
+		{"name":"Check Digit", "type":"ST", "nho_name":"chk_digit"},
+		{"name":"Check Digit Scheme ", "type":"ID", "nho_name":"chk_digit_scheme"},
+		{"name":"Assigning Authority", "type":"HD", "nho_name":"assign_authority"},
+		{"name":"Identifier Type Code", "type":"ID", "nho_name":"id_type_cd"},
+		{"name":"Assigning Facility", "type":"HD", "nho_name":"assign_facility"},
+		{"name":"Effective Date", "type":"DT", "nho_name":"effective_date"},
+		{"name":"Expiration Date", "type":"DT", "nho_name":"expire_date"},
+		{"name":"Assigning Jurisdiction", "type":"CWE", "nho_name":"assign_jurisdict"},
+		{"name":"Assigning Agency or Department", "type":"CWE", "nho_name":"assign_dpt"}
+	],
+	"XPN":
+	[
+		{"name":"Family Name", "type":"FN", "nho_name":"f_nm"},
+		{"name":"Given Name", "type":"ST", "nho_name":"g_nm"},
+		{"name":"Second and Further Given Names or Initials Thereof", "type":"ST", "nho_name":"2nd_nm"},
+		{"name":"Suffix (e.g., JR or III)", "type":"ST", "nho_name":"suffix"},
+		{"name":"Prefix (e.g., DR)", "type":"ST", "nho_name":"prefix"},
+		{"name":"Degree (e.g., MD)", "type":"IS", "nho_name":"degree"},
+		{"name":"Name Type Code", "type":"ID", "nho_name":"nm_type_cd"},
+		{"name":"Name Representation Code", "type":"ID", "nho_name":"nm_represent_cd"},
+		{"name":"Name Context", "type":"CWE", "nho_name":"nm_cntext"},
+		{"name":"Name Validity Range", "type":"DR", "nho_name":"nm_valid_range"},
+		{"name":"Name Assembly Order", "type":"ID", "nho_name":"nm_assembly_order"},
+		{"name":"Effective Date", "type":"TS", "nho_name":"effective_date"},
+		{"name":"Expiration Date", "type":"TS", "nho_name":"expire_date"},
+		{"name":"Professional Suffix", "type":"ST", "nho_name":"pro_suffix"}
+	],
+	"XAD":
+	[
+		{"name":"Street Address", "type":"SAD", "nho_name":"street_address"},
+		{"name":"Other Designation", "type":"ST", "nho_name":"other_design"},
+		{"name":"City", "type":"ST", "nho_name":"city"},
+		{"name":"State or Province", "type":"ST", "nho_name":"state"},
+		{"name":"Zip or Postal Code", "type":"ST", "nho_name":"zip_cd"},
+		{"name":"Country", "type":"ID", "nho_name":"country"},
+		{"name":"Address Type", "type":"ID", "nho_name":"address_type"},
+		{"name":"Other Geographic Designation", "type":"ST", "nho_name":"other_geo_design"},
+		{"name":"County/Parish Code", "type":"IS", "nho_name":"parish_cd"},
+		{"name":"Census Tract", "type":"IS", "nho_name":"census_tract"},
+		{"name":"Address Representation Code", "type":"ID", "nho_name":"address_represent_cd"},
+		{"name":"Address Validity Range", "type":"DR", "nho_name":"address_valid_range"},
+		{"name":"Effective Date", "type":"TS", "nho_name":"effective_date"},
+		{"name":"Expiration Date", "type":"TS", "nho_name":"expire_date"}
+	],
+	"XTN":
+	[
+		{"name":"Telephone Number", "type":"ST", "nho_name":"tel_number"},
+		{"name":"Telecommunication Use Code", "type":"ID", "nho_name":"tel_use_cd"},
+		{"name":"Telecommunication Equipment Type", "type":"ID", "nho_name":"tel_equip_type"},
+		{"name":"Email Address", "type":"ST", "nho_name":"email_address"},
+		{"name":"Country Code", "type":"NM", "nho_name":"country_cd"},
+		{"name":"Area/City Code", "type":"NM", "nho_name":"city_cd"},
+		{"name":"Local Number", "type":"NM", "nho_name":"local_number"},
+		{"name":"Extension", "type":"NM", "nho_name":"ext"},
+		{"name":"Any Text", "type":"ST", "nho_name":"any_txt"},
+		{"name":"Extension Prefix", "type":"ST", "nho_name":"ex_prefix"},
+		{"name":"Speed Dial Code", "type":"ST", "nho_name":"speed_dial_cd"},
+		{"name":"Unformatted Telephone number ", "type":"ST", "nho_name":"unform_tel_number"}
+	],
+	"XON":
+	[
+		{"name":"Organization Name", "type":"ST", "nho_name":"organ_nm"},
+		{"name":"Organization Name Type Code", "type":"IS", "nho_name":"organ_nm_type_cd"},
+		{"name":"ID Number", "type":"NM", "nho_name":"id"},
+		{"name":"Check Digit", "type":"NM", "nho_name":"chk_digit"},
+		{"name":"Check Digit Scheme ", "type":"ID", "nho_name":"chk_digit_scheme"},
+		{"name":"Assigning Authority", "type":"HD", "nho_name":"assign_authority"},
+		{"name":"Identifier Type Code", "type":"ID", "nho_name":"id_type_cd"},
+		{"name":"Assigning Facility", "type":"HD", "nho_name":"assign_facility"},
+		{"name":"Name Representation Code", "type":"ID", "nho_name":"nm_represent_cd"},
+		{"name":"Organization Identifier", "type":"ST", "nho_name":"organ_id"}
+	],
+	"PL":
+	[
+		{"name":"Point of Care", "type":"IS", "nho_name":"pnt_care"},
+		{"name":"Room", "type":"IS", "nho_name":"room"},
+		{"name":"Bed", "type":"IS", "nho_name":"bed"},
+		{"name":"Facility", "type":"HD", "nho_name":"facility"},
+		{"name":"Location Status", "type":"IS", "nho_name":"loc_status"},
+		{"name":"Person Location Type", "type":"IS", "nho_name":"person_loc_type"},
+		{"name":"Building", "type":"IS", "nho_name":"building"},
+		{"name":"Floor", "type":"IS", "nho_name":"floor"},
+		{"name":"Location Description", "type":"ST", "nho_name":"loc_description"},
+		{"name":"Comprehensive Location Identifier", "type":"EI", "nho_name":"comp_loc_id"},
+		{"name":"Assigning Authority for Location", "type":"HD", "nho_name":"loc_assign_authority"}
+	],
+	"EI":
+	[
+		{"name":"Entity Identifier", "type":"ST", "nho_name":"entity_id"},
+		{"name":"Namespace ID", "type":"IS", "nho_name":"namespace_id"},
+		{"name":"Universal ID", "type":"ST", "nho_name":"univ_id"},
+		{"name":"Universal ID Type", "type":"ID", "nho_name":"univ_id_type"}
+	],
+	"RPT":
+	[
+		{"name":"Repeat Pattern Code", "type":"CWE", "nho_name":"repete_pattern_cd"},
+		{"name":"Calendar Alignment", "type":"ID", "nho_name":"calendar_alignment"},
+		{"name":"Phase Range Begin Value", "type":"NM", "nho_name":"phase_range_begin"},
+		{"name":"Phase Range End Value", "type":"NM", "nho_name":"phase_range_end"},
+		{"name":"Period Quantity", "type":"NM", "nho_name":"peropd_quant"},
+		{"name":"Period Units", "type":"IS", "nho_name":"period_units"},
+		{"name":"Institution Specified Time", "type":"ID", "nho_name":"institute_spec_time"},
+		{"name":"Event", "type":"ID", "nho_name":"event"},
+		{"name":"Event Offset Quantity", "type":"NM", "nho_name":"event_offset_quant"},
+		{"name":"Event Offset Units", "type":"IS", "nho_name":"event_offset_units"},
+		{"name":"General Timing Specification", "type":"GTS", "nho_name":"general_tim_spec"}
+	],
+	"CQ":
+	[
+		{"name":"Quantity", "type":"NM", "nho_name":"quant_nm"},
+		{"name":"Units", "type":"CWE", "nho_name":"units"}
+	],
+	"LA2":
+	[
+		{"name":"Point of Care", "type":"IS", "nho_name":"pnt_care"},
+		{"name":"Room", "type":"IS", "nho_name":"room"},
+		{"name":"Bed", "type":"IS", "nho_name":"bed"},
+		{"name":"Facility", "type":"HD", "nho_name":"facility"},
+		{"name":"Location Status", "type":"IS", "nho_name":"loc_status"},
+		{"name":"Patient Location Type", "type":"IS", "nho_name":"pt_loc_type"},
+		{"name":"Building", "type":"IS", "nho_name":"building"},
+		{"name":"Floor", "type":"IS", "nho_name":"floor"},
+		{"name":"Street Address", "type":"ST", "nho_name":"street_address"},
+		{"name":"Other Designation", "type":"ST", "nho_name":"other_design"},
+		{"name":"City", "type":"ST", "nho_name":"city"},
+		{"name":"State or Province", "type":"ST", "nho_name":"state"},
+		{"name":"Zip or Postal Code", "type":"ST", "nho_name":"zip_cd"},
+		{"name":"Country", "type":"ID", "nho_name":"country"},
+		{"name":"Address Type", "type":"ID", "nho_name":"address_type"},
+		{"name":"Other Geographic Designation ", "type":"ST", "nho_name":"other_geo_design"}
+	],
+	"EIP":
+	[
+		{"name":"Placer Assigned Identifier", "type":"EI", "nho_name":"placer_id"},
+		{"name":"Filler Assigned Identifier", "type":"EI", "nho_name":"filler_id"}
+	],
+	"JCC":
+	[
+		{"name":"Job Code", "type":"IS", "nho_name":"job_cd"},
+		{"name":"Job Class", "type":"IS", "nho_name":"job_class"},
+		{"name":"Job Description Text", "type":"TX", "nho_name":"job_descript_txt"}
+	],
+	"ZRD":
+	[
+		{"name":"Identifier", "type":"ST", "nho_name":"id"},
+		{"name":"Text", "type":"ST", "nho_name":"txt"},
+		{"name":"Name Of Encoding System", "type":"IS", "nho_name":"nm_encode_sys"},
+		{"name":"Quantity", "type":"NM", "nho_name":"quantity"},
+		{"name":"Unit", "type":"CWE", "nho_name":"unit"},
+		{"name":"Film Partition Number", "type":"NM", "nho_name":"film_part_number"}
+	],
+	"FN":
+	[
+		{"name":"Surname", "type":"ST", "nho_name":"surname"},
+		{"name":"Own Surname Prefix", "type":"ST", "nho_name":"o_surname_pre"},
+		{"name":"Own Surname", "type":"ST", "nho_name":"o_surname"},
+		{"name":"Surname Prefix From Partner/Spouse", "type":"ST", "nho_name":"p_surname_pre"},
+		{"name":"Surname From Partner/Spouse", "type":"ST", "nho_name":"p_surname"}
+	],
+	"SAD":
+	[
+		{"name":"Street or Mailing Address", "type":"ST", "nho_name":"street_add"},
+		{"name":"Street Name", "type":"ST", "nho_name":"street_nm"},
+		{"name":"Dwelling Number", "type":"ST", "nho_name":"dwell_number"}
+	],
+	"SPS":
+	[
+		{"name":"Specimen Source Name or Code", "type":"CWE", "nho_name":"spec_src_nm"},
+		{"name":"Additives", "type":"CWE", "nho_name":"additives"},
+		{"name":"Specimen Collection Method", "type":"TX", "nho_name":"spec_collect_method"},
+		{"name":"Body Site", "type":"CWE", "nho_name":"body_site"},
+		{"name":"Site Modifier", "type":"CWE", "nho_name":"site_modifier"},
+		{"name":"Collection Method Modifier Code", "type":"CWE", "nho_name":"collect_mod_cd"},
+		{"name":"Specimen Role", "type":"CWE", "nho_name":"spec_role"}
+	],
+	"DLN":
+	[
+		{"name":"License Number", "type":"ST", "nho_name":""},
+		{"name":"Issuing State, Province, Country", "type":"IS", "nho_name":""},
+		{"name":"Expiration Date", "type":"DT", "nho_name":""}
+	],
+	"FC":
+	[
+		{"name":"Financial Class Code", "type":"IS", "nho_name":""},
+		{"name":"Effective Date", "type":"TS", "nho_name":""}
+	],
+	"DLD":
+	[
+		{"name":"Discharge Location", "type":"IS", "nho_name":""},
+		{"name":"Effective Date", "type":"TS", "nho_name":""}
+	],
+	"AUI":
+	[
+		{"name":"Authorization Number", "type":"ST", "nho_name":""},
+		{"name":"Date", "type":"DT", "nho_name":""},
+		{"name":"Source", "type":"ST", "nho_name":""}
+	],
+	"CP":
+	[
+		{"name":"Price", "type":"MO", "nho_name":""},
+		{"name":"Price Type", "type":"ID", "nho_name":""},
+		{"name":"From Value", "type":"NM", "nho_name":""},
+		{"name":"To Value", "type":"NM", "nho_name":""},
+		{"name":"Range Units", "type":"CWE", "nho_name":""},
+		{"name":"Range Type", "type":"ID", "nho_name":""}
+	],
+	"TQ":
+	[
+		{"name":"Quantity", "type":"CQ", "nho_name":""},
+		{"name":"Interval", "type":"RI", "nho_name":""},
+		{"name":"Duration", "type":"ST", "nho_name":""},
+		{"name":"Start Date/Time", "type":"TS", "nho_name":""},
+		{"name":"End Date/Time", "type":"TS", "nho_name":""},
+		{"name":"Priority", "type":"ST", "nho_name":""},
+		{"name":"Condition", "type":"ST", "nho_name":""},
+		{"name":"Text", "type":"TX", "nho_name":""},
+		{"name":"Conjunction", "type":"ID", "nho_name":""},
+		{"name":"Order Sequencing", "type":"OSD", "nho_name":""},
+		{"name":"Occurrence Duration", "type":"CE", "nho_name":""},
+		{"name":"Total Occurrences", "type":"NM", "nho_name":""}
+	],
+	"LA1":
+	[
+		{"name":"Point of Care", "type":"IS", "nho_name":""},
+		{"name":"Room", "type":"IS", "nho_name":""},
+		{"name":"Bed", "type":"IS", "nho_name":""},
+		{"name":"Facility", "type":"HD", "nho_name":""},
+		{"name":"Location Status", "type":"IS", "nho_name":""},
+		{"name":"Patient Location Type", "type":"IS", "nho_name":""},
+		{"name":"Building", "type":"IS", "nho_name":""},
+		{"name":"Floor", "type":"IS", "nho_name":""},
+		{"name":"Address", "type":"AD", "nho_name":""}
+	],
+	"MOC":
+	[
+		{"name":"Monetary Amount", "type":"MO", "nho_name":""},
+		{"name":"Charge Code", "type":"CWE", "nho_name":""}
+	],
+	"PRL":
+	[
+		{"name":"Parent Observation Identifier", "type":"CWE", "nho_name":""},
+		{"name":"Parent Observation Sub-identifier", "type":"ST", "nho_name":""},
+		{"name":"Parent Observation Value Descriptor", "type":"TX", "nho_name":""}
+	],
+	"NDL":
+	[
+		{"name":"Name", "type":"CNN", "nho_name":""},
+		{"name":"Start Date/time", "type":"TS", "nho_name":""},
+		{"name":"End Date/time", "type":"TS", "nho_name":""},
+		{"name":"Point of Care ", "type":"IS", "nho_name":""},
+		{"name":"Room ", "type":"IS", "nho_name":""},
+		{"name":"Bed", "type":"IS", "nho_name":""},
+		{"name":"Facility", "type":"HD", "nho_name":""},
+		{"name":"Location Status ", "type":"IS", "nho_name":""},
+		{"name":"Patient Location Type", "type":"IS", "nho_name":""},
+		{"name":"Building ", "type":"IS", "nho_name":""},
+		{"name":"Floor", "type":"IS", "nho_name":""}
+	],
+	"MO":
+	[
+		{"name":"Quantity", "type":"NM", "nho_name":""},
+		{"name":"Denomination", "type":"ID", "nho_name":""}
+	],
+	"AD":
+	[
+		{"name":"Street Address", "type":"ST", "nho_name":""},
+		{"name":"Other Designation", "type":"ST", "nho_name":""},
+		{"name":"City", "type":"ST", "nho_name":""},
+		{"name":"State or Province", "type":"ST", "nho_name":""},
+		{"name":"Zip or Postal Code", "type":"ST", "nho_name":""},
+		{"name":"Country", "type":"ID", "nho_name":""},
+		{"name":"Address Type", "type":"ID", "nho_name":""},
+		{"name":"Other Geographic Designation", "type":"ST", "nho_name":""}
+	],
+	"CNN":
+	[
+		{"name":"ID Number", "type":"ST", "nho_name":""},
+		{"name":"Family Name", "type":"ST", "nho_name":""},
+		{"name":"Given Name", "type":"ST", "nho_name":""},
+		{"name":"Second and Further Given Names or Initials Thereof", "type":"ST", "nho_name":""},
+		{"name":"Suffix (e.g., JR or III)", "type":"ST", "nho_name":""},
+		{"name":"Prefix (e.g., DR)", "type":"ST", "nho_name":""},
+		{"name":"Degree (e.g., MD", "type":"IS", "nho_name":""},
+		{"name":"Source Table", "type":"IS", "nho_name":""},
+		{"name":"Assigning Authority   - Namespace ID", "type":"IS", "nho_name":""},
+		{"name":"Assigning Authority  - Universal ID", "type":"ST", "nho_name":""},
+		{"name":"Assigning Authority  - Universal ID Type", "type":"ID", "nho_name":""}
+	]
+}
