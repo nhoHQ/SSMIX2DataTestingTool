@@ -47,7 +47,7 @@ def outputResults(outputFile):
 
         fout = codecs.open(outputFile, 'a', 'utf-8')
 
-        fout.write('\r\n')
+        fout.write('\r\n#####checkFilePath result####\r\n')
         fout.write('%d files failure\r\n\r\n' % len(locationNG))
         
         for n in locationNG:
@@ -56,8 +56,6 @@ def outputResults(outputFile):
         fout.write('\r\n')
 
         fout.close()
-
-        print('see %s' % outputFile)
 
     except Exception as e:
         print(str(e))

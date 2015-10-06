@@ -106,7 +106,7 @@ def outputResults(outputFile):
     try:
         fout = codecs.open(outputFile, 'a', 'utf-8')
 
-        fout.write('\r\n')
+        fout.write('\r\n#####checkNumericFields result#####\r\n')
         fout.write('%d record failure\r\n\r\n' % len(numericNg))
         
         for n in numericNg:
@@ -115,8 +115,6 @@ def outputResults(outputFile):
         fout.write('\r\n')
 
         fout.close()
-
-        print('see %s' % outputFile)
 
     except Exception as e:
         print(str(e))

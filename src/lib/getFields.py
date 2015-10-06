@@ -51,7 +51,7 @@ def outputResults(outputFile):
 
     fout = codecs.open(outputFile, 'a', 'utf-8')
 
-    fout.write('\r\n')
+    fout.write('\r\n#####getField result#####\r\n')
     for k,v in sorted(result.items()):
         fout.write('\r\n*%s==================\r\n' % k)
         
@@ -76,8 +76,6 @@ def outputResults(outputFile):
     fout.write('\r\n')
 
     fout.close()
-
-    print('see %s' % outputFile)
 
     return
 

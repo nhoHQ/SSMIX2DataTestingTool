@@ -60,7 +60,7 @@ def outputResults(outputFile):
         
         fout = codecs.open(outputFile, 'a', 'utf-8')
 
-        fout.write('\r\n')
+        fout.write('\r\n#####countFields result#####\r\n')
         for k,v in sorted(fields.items()):
             fout.write('\r\n')
             fout.write('*%s*****************************************\r\n' % k)
@@ -77,8 +77,6 @@ def outputResults(outputFile):
         fout.write('\r\n')
 
         fout.close()
-
-        print('see %s' % outputFile)
 
     except Exception as e:
         print(str(e))

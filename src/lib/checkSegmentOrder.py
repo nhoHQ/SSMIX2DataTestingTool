@@ -59,7 +59,8 @@ def outputResults(outputFile):
     try:
 
         fout = codecs.open(outputFile, 'a', 'utf-8')
-        fout.write('\r\n')
+        
+        fout.write('\r\n#####checkSegmentOrder result#####\r\n')
 
         for k,v in sorted(segmentOrder.items()):
             kk = k.split('@@@')
@@ -71,8 +72,6 @@ def outputResults(outputFile):
             fout.write('\r\n')        
 
         fout.close()
-
-        print('see %s' % outputFile)
     
     except Exception as e:
         print(str(e))

@@ -135,7 +135,7 @@ def outputResults(outputFile):
 
         fout = codecs.open(outputFile, 'a', 'utf-8')
 
-        fout.write('\r\n')
+        fout.write('\r\n#####countFiles result#####\r\n')
         fout.write('*data kind*************************************************\r\n\r\n')
 
         fout.write('%s\t%s\t%s\t%s\t%s\t%s\t%s\r\n' % ('data kind', 'condition flag', 'min medication date', 'max medication date', 'min timestamp', 'max timestamp', 'count'))
@@ -185,8 +185,6 @@ def outputResults(outputFile):
         fout.write('\r\n')
 
         fout.close()
-
-        print('see %s' % outputFile)
 
     except Exception as e:
         print(str(e))
