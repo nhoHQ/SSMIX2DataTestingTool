@@ -1,6 +1,8 @@
 # coding: UTF-8
 import os
 import codecs
+import datetime
+import socket
 import lib.setup
 import lib.checkFilePath
 import lib.countFiles
@@ -10,6 +12,8 @@ import lib.checkNumericFields
 import lib.checkSegmentOrder
 import lib.countFields
 import lib.getFields
+
+count = 0
 
 #使い方の表示
 def printUsage():
@@ -21,7 +25,7 @@ def printUsage():
 #処理振り分け
 def callFunction():
 
-    c = 0
+    global count
 
     try:
 
@@ -29,7 +33,7 @@ def callFunction():
             for file in files:
 
                 #先頭N件のみチェック
-                if lib.setup.firstN != -1 and c >= lib.setup.firstN:
+                if lib.setup.firstN != -1 and count >= lib.setup.firstN:
                     return
 
                 #file = 0_1_2_3_4_5_6
@@ -83,7 +87,7 @@ def callFunction():
                 if lib.setup.callFunction in ['getFields', 'checkAll']:
                     lib.getFields.getFields(filePath, f[2], fileStr)
                     
-                c += 1
+                count += 1
 
     except Exception as e:
         print(str(e))
@@ -142,7 +146,10 @@ def main(argv):
     #[-example インデックスリスト] #例示取得フィールドの指定 getFieldsのみ有効 -example 5,6のように指定
     #[-help] #使い方の表示
 
+    global count
+
     try:
+        pwd = os.path.abspath(os.path.dirname(__file__))
 
         #使い方の表示
         if len(argv) > 1 and argv[1] == '-help':
@@ -152,25 +159,51 @@ def main(argv):
         #引数なし
         if len(argv) == 1:
             #iniファイルを参照
-            ret = lib.setup.loadStandardIni(os.path.join('..','etc','standard.ini'))
+            ret = lib.setup.loadStandardIni(os.path.join(pwd, '..', 'etc', 'standard.ini'))
 
         #引数あり
         else:
             #引数を取得
-            ret = load.setup.getArgv(argv)
+            ret = lib.setup.getArgv(argv)
 
         if ret == False:
-
+            printUsage()
             return
 
+        fout = codecs.open(lib.setup.outputFile, 'a', 'utf-8')
+        fout.write('%s\r\n' % datetime.datetime.now())
+        fout.write('[python %s] @ %s\r\n' % (' '.join(argv), socket.gethostname()))
+
+        #設定を結果ファイルに出力＋プリント
+        fout = codecs.open(lib.setup.outputFile, 'a', 'utf-8')
+        fout.write('\r\n#####setup#####\r\n')
+        fout.write('callFunction: %s\r\n' % lib.setup.callFunction)
+        fout.write('rootDir: %s\r\n' % lib.setup.rootDir)
+        fout.write('outputFile: %s\r\n' % lib.setup.outputFile)
+        fout.write('conditionFlag: %s\r\n' % lib.setup.conditionFlag)
+        fout.write('firstN %d\r\n' % lib.setup.firstN)
+        if len(lib.setup.getField) != 0:
+            fout.write('getFields\r\n')
+            for gf in lib.setup.getField:
+                fout.write('%s -%s @%s\r\n' % (gf['segmentHeader'], gf['fieldIndex'], gf['exampleIndex']))    
+                
+        fout.close()
+
         #セットアップ
-        lib.setup.loadIncludeFile(os.path.join('..','include','HL7_SEGMENT.json'),os.path.join('..','include','HL7_DATATYPE.json'),os.path.join('..','include','HL7_SEGMENTORDER.json'))
+        lib.setup.loadIncludeFile(os.path.join(pwd, '..', 'include', 'HL7_SEGMENT.json'),os.path.join(pwd, '..', 'include', 'HL7_DATATYPE.json'),os.path.join(pwd, '..', 'include', 'HL7_SEGMENTORDER.json'))
         
         #処理振り分け
         callFunction()
 
         #結果出力
         outputResults()
+
+        fout = codecs.open(lib.setup.outputFile, 'a', 'utf-8')
+        fout.write('\r\n%d file check complete\r\n' % count)
+        fout.write('%s\r\n' % datetime.datetime.now())
+        fout.close()
+
+        print('see %s' % lib.setup.outputFile)
         
     except Exception as e:
         print(str(e))
