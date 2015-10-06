@@ -9,6 +9,7 @@
 	"TM":"str",
 	"DTM":"str",
 	"SI":"str",
+	"GTS":"str",
 	"HD":
 	[
 		{"name":"Namespace ID", "type":"IS", "nho_name":"namespace_id"},
@@ -391,5 +392,24 @@
 		{"name":"Assigning Authority   - Namespace ID", "type":"IS", "nho_name":""},
 		{"name":"Assigning Authority  - Universal ID", "type":"ST", "nho_name":""},
 		{"name":"Assigning Authority  - Universal ID Type", "type":"ID", "nho_name":""}
+	],
+	"RI":
+	[
+		{"name":"Repeat Pattern", "type":"IS", "nho_name":""},
+		{"name":"Explicit Time Interval", "type":"ST", "nho_name":""}
+	],
+	"OSD":
+	[
+		{"name":"Sequence/Results Flag", "type":"ID", "nho_name":""},
+		{"name":"Placer Order Number: Entity Identifier", "type":"ST", "nho_name":""},
+		{"name":"Placer Order Number: Namespace ID", "type":"IS", "nho_name":""},
+		{"name":"Filler Order Number: Entity Identifier", "type":"ST", "nho_name":""},
+		{"name":"Filler Order Number: Namespace ID", "type":"IS", "nho_name":""},
+		{"name":"Sequence Condition Value", "type":"ST", "nho_name":""},
+		{"name":"Maximum Number of Repeats", "type":"NM", "nho_name":""},
+		{"name":"Placer Order Number: Universal ID", "type":"ST", "nho_name":""},
+		{"name":"Placer Order Number: Universal ID Type", "type":"ID", "nho_name":""},
+		{"name":"Filler Order Number: Universal ID", "type":"ST", "nho_name":""},
+		{"name":"Filler Order Number: Universal ID Type", "type":"ID", "nho_name":""}
 	]
 }
