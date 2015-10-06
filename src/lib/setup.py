@@ -29,6 +29,9 @@ def loadStandardIni(iniFile):
     global getField
     
     try:
+
+        #出力ファイルの指定がなければpid.out
+        outputFile = '%s.out' % os.getpid()
         
         fin = codecs.open(iniFile,'r','utf-8')
         
@@ -87,14 +90,16 @@ def loadStandardIni(iniFile):
 
         fin.close()
 
+        #設定を結果ファイルに出力＋プリント
         print('callFunction: %s' % callFunction)
         print('rootDir: %s' % rootDir)
         print('outputFile: %s' % outputFile)
         print('conditionFlag: %s' % conditionFlag)
         print('firstN %d' % firstN)
-        print('getFields')
-        for gf in getField:
-            print('%s -%s @%s' % (gf['segmentHeader'], gf['fieldIndex'], gf['exampleIndex']))
+        if len(getField) != 0:
+            print('getFields')            
+            for gf in getField:
+                print('%s -%s @%s' % (gf['segmentHeader'], gf['fieldIndex'], gf['exampleIndex']))
 
         ret = True
         
@@ -117,10 +122,14 @@ def getArgv(argv):
 
     try:
 
-        #呼ぶ関数
-        callFunction = argv[1]
+        #出力ファイルの指定がなければpid.out
+        outputFile = '%s.out' % os.getpid()
 
-        for i in range(2,len(argv)):
+        for i in range(1,len(argv)):
+
+            #呼ぶ関数
+            if argv[i] == '-callFunction':
+                callFunction = argv[i+1]
 
             #チェック対象となるディレクトリ
             if argv[i] == '-rootDir':
@@ -159,6 +168,17 @@ def getArgv(argv):
                         tmp_sample[i] = int(tmp_sample[i])
 
                 getField.append({'segmentHeader':segment, 'fieldIndex':tmp_field, 'exampleIndex':tmp_sample})
+
+        #設定を結果ファイルに出力＋プリント
+        print('callFunction: %s' % callFunction)
+        print('rootDir: %s' % rootDir)
+        print('outputFile: %s' % outputFile)
+        print('conditionFlag: %s' % conditionFlag)
+        print('firstN %d' % firstN)
+        if len(getField) != 0:
+            print('getFields')            
+            for gf in getField:
+                print('%s -%s @%s' % (gf['segmentHeader'], gf['fieldIndex'], gf['exampleIndex']))
                 
         ret = True
 
