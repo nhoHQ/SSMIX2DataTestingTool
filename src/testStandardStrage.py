@@ -50,6 +50,14 @@ def callFunction():
                 if lib.setup.conditionFlag != '' and lib.setup.conditionFlag != f[6]:
                     continue
 
+                #発生日時の制限(開始)
+                if lib.setup.timeStampStart > f[4]:
+                    continue
+
+                #発生日時の制限(終了)
+                if lib.setup.timeStampEnd < f[4]:
+                    continue
+
                 #チェック対象ファイルのパス
                 filePath = os.path.join(root, file)
 
@@ -181,6 +189,8 @@ def main(argv):
         fout.write('rootDir: %s\r\n' % lib.setup.rootDir)
         fout.write('outputFile: %s\r\n' % lib.setup.outputFile)
         fout.write('conditionFlag: %s\r\n' % lib.setup.conditionFlag)
+        fout.write('timeStampStart: %s\r\n' % lib.setup.timeStampStart)
+        fout.write('timeStampEnd: %s\r\n' % lib.setup.timeStampEnd)
         fout.write('firstN %d\r\n' % lib.setup.firstN)
         if len(lib.setup.getField) != 0:
             fout.write('getFields\r\n')

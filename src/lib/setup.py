@@ -9,6 +9,8 @@ callFunction = '' #呼ぶ関数
 rootDir = '' #チェック対象となるディレクトリ
 outputFile = '' #チェック結果出力ファイル
 conditionFlag = '' #チェック対象となるコンディションフラグ
+timeStampStart = '00000000000000000' #チェック対象となる出力時刻(開始)
+timeStampEnd = '99999999999999999' #チェック対象となる出力時刻(終了)
 firstN = -1 #チェック対象となるファイル数
 getField = [] #getFieldsで取得対象となるセグメント、フィールド、例示取得対象となるフィールド
 
@@ -25,6 +27,8 @@ def loadStandardIni(iniFile):
     global rootDir
     global outputFile
     global conditionFlag
+    global timeStampStart
+    global timeStampEnd
     global firstN
     global getField
     
@@ -59,13 +63,27 @@ def loadStandardIni(iniFile):
                 if item == '-conditionFlag':
                     conditionFlag = l.groups(0)[1].strip()
 
+                #チェック対象となる出力時刻(開始)
+                if item == '-timeStampStart' and l.groups(0)[1].strip() != '':
+                    timeStampStart = l.groups(0)[1].strip()
+
+                    #桁が足りなかったら0を足しておく
+                    timeStampStart = (timeStampStart + '00000000000000000')[0:17]
+
+                #チェック対象となる出力時刻(終了)
+                if item == '-timeStampEnd' and l.groups(0)[1].strip() != '':
+                    timeStampEnd = l.groups(0)[1].strip()
+
+                    #桁が足りなかったら9を足しておく
+                    timeStampEnd = (timeStampEnd + '99999999999999999')[0:17]
+                
                 #チェック対象となるファイル数
                 if item == '-firstN':
                     if l.groups(0)[1].strip() == '':
                         firstN = -1
                     else:
                         firstN = int(l.groups(0)[1].strip())
-                        
+
                 #getFieldsで取得対象となるセグメント、フィールド、例示取得対象となるフィールド
                 #OBX-3,6,7@5
                 if item == '-getField':
@@ -95,6 +113,8 @@ def loadStandardIni(iniFile):
         print('rootDir: %s' % rootDir)
         print('outputFile: %s' % outputFile)
         print('conditionFlag: %s' % conditionFlag)
+        print('timestamp start: %s' % timeStampStart)
+        print('timestamp end: %s' % timeStampEnd)
         print('firstN %d' % firstN)
         if len(getField) != 0:
             print('getFields')            
@@ -117,6 +137,8 @@ def getArgv(argv):
     global rootDir
     global outputFile
     global conditionFlag
+    global timeStampStart
+    global timeStampEnd
     global firstN
     global getField
 
@@ -143,6 +165,20 @@ def getArgv(argv):
             if argv[i] == '-conditionFlag':
                 conditionFlag = argv[i+1]
 
+            #チェック対象となる出力時刻(開始)
+            if argv[i] == '-timeStampStart' and argv[i+1] != '':
+                timeStampStart = argv[i+1]
+
+                #桁が足りなかったら0を足しておく
+                timeStampStart = (timeStampStart + '00000000000000000')[0:17]
+
+            #チェック対象となる出力時刻(終了)
+            if argv[i] == '-timeStampEnd' and argv[i+1] != '':
+                timeStampEnd = argv[i+1]
+
+                #桁が足りなかったら0を足しておく
+                timeStampEnd = (timeStampEnd + '99999999999999999')[0:17]
+                    
             #チェック対象となるファイル数
             if argv[i] == '-firstN':
                 firstN = int(argv[i+1])
@@ -174,6 +210,8 @@ def getArgv(argv):
         print('rootDir: %s' % rootDir)
         print('outputFile: %s' % outputFile)
         print('conditionFlag: %s' % conditionFlag)
+        print('timestamp start: %s' % timeStampStart)
+        print('timestamp end: %s' % timeStampEnd)
         print('firstN %d' % firstN)
         if len(getField) != 0:
             print('getFields')            
