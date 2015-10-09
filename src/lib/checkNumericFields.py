@@ -90,7 +90,8 @@ def checkNumericFields(filePath, fileStr):
 
                                     #拡張型…がなぜここに存在するんだろう？副成分を割るデリミタなんてあるの？
                                     else:
-                                        print('%s-%d-%d-%d: %s' %(header,i,j,k,subComponentType))
+                                        pass
+                                        #print('%s-%d-%d-%d: %s' %(header,i,j,k,subComponentType))
 
             else:
                 print('unknown segment [%s] @ %s' % (header, filePath))
