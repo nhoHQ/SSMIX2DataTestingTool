@@ -46,6 +46,7 @@ def checkSegmentOrder(filePath, dataType, conditionFlag, fileStr):
             else:
                 segmentOrder[key]['ng'] = filePath
         else:
+            segmentOrder[key]['ng'] = filePath
             print('unknown message type [%s] @ %s' % (msgType, filePath))
 
     except Exception as e:
