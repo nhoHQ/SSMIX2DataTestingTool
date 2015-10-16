@@ -2,7 +2,8 @@
 import os
 import codecs
 import re
-import lib.setup
+import lib.setup as setup
+#import setup #for debug
 
 segmentOrder = {}
 
@@ -40,8 +41,8 @@ def checkSegmentOrder(filePath, dataType, conditionFlag, fileStr):
         segmentOrder[key]['total'] = segmentOrder[key]['total'] + 1
 
         #セグメントの組み合わせをチェックする
-        if msgType in lib.setup.HL7_SEGMENTORDER:
-            if re.match(lib.setup.HL7_SEGMENTORDER[msgType], checkStr):
+        if msgType in setup.HL7_SEGMENTORDER:
+            if re.match(setup.HL7_SEGMENTORDER[msgType], checkStr):
                 segmentOrder[key]['ok'] = segmentOrder[key]['ok'] + 1
             else:
                 segmentOrder[key]['ng'] = filePath
@@ -84,7 +85,7 @@ if __name__ == "__main__":
     import sys
     import codecs
     
-    setup()
+    setup.loadIncludeFile_SEGMENTORDER(os.path.join('..','..','include','HL7_SEGMENTORDER.json'))
 
     fin = codecs.open('..\\..\\sampleData\\000\\000\\0000001\\20000401\\OMP-11\\0000001_20000401_OMP-11_123456789012345_20110701113813225_01_1', 'r', 'utf-8')
     fileStr = fin.read()

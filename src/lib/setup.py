@@ -17,6 +17,7 @@ getField = [] #getFieldsで取得対象となるセグメント、フィール�
 HL7_SEGMENT = {} #セグメントの定義
 HL7_DATATYPE = {} #データ型の定義
 HL7_SEGMENTORDER = {} #セグメントの順序・繰り返しの定義
+SSMIX_CAREDATE = {} #診療日の定義
 
 #iniファイルの読み込み
 def loadStandardIni(iniFile):
@@ -226,14 +227,12 @@ def getArgv(argv):
 
     return ret
 
-#定義の読み込み
-def loadIncludeFile(f_segment, f_dataType, f_segmentOrder):
+#定義の読み込み セグメント
+def loadIncludeFile_SEGMENT(f_segment):
 
     ret = False
 
     global HL7_SEGMENT
-    global HL7_DATATYPE
-    global HL7_SEGMENTORDER 
     
     try:
         
@@ -246,12 +245,64 @@ def loadIncludeFile(f_segment, f_dataType, f_segmentOrder):
         #ZI1はIN1と同じ 定義ファイルに同じ内容を書くか悩む
         HL7_SEGMENT['ZI1'] = HL7_SEGMENT['IN1']
 
+    except Exception as e:
+        print(str(e))
+    
+    return ret
+
+#定義の読み込み データ型
+def loadIncludeFile_DATATYPE(f_dataType):
+
+    ret = False
+
+    global HL7_DATATYPE
+    
+    try:
+        
+        ret = True
+
         fin = codecs.open(f_dataType, 'r', 'utf-8')
         HL7_DATATYPE = json.load(fin)
         fin.close()
+        
+    except Exception as e:
+        print(str(e))
+    
+    return ret
+
+#定義の読み込み セグメント構成
+def loadIncludeFile_SEGMENTORDER(f_segmentOrder):
+
+    ret = False
+
+    global HL7_SEGMENTORDER
+    
+    try:
+        
+        ret = True
 
         fin = codecs.open(f_segmentOrder, 'r', 'utf-8')
         HL7_SEGMENTORDER = json.load(fin)
+        fin.close()
+  
+    except Exception as e:
+        print(str(e))
+    
+    return ret
+
+#定義の読み込み 診療日
+def loadIncludeFile_CAREDATE(f_caredate):
+
+    ret = False
+
+    global SSMIX_CAREDATE
+    
+    try:
+        
+        ret = True
+
+        fin = codecs.open(f_caredate, 'r', 'utf-8')
+        SSMIX_CAREDATE = json.load(fin)
         fin.close()
         
     except Exception as e:
