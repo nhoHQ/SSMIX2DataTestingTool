@@ -396,6 +396,12 @@
 		{"name":"Modifier Code for Exchange(Suffix)", "ja_name":"修飾語交換用コード（接尾語）", "type":"CWE", "length":250, "ssmix2-required":{"*":"O"}, "nho_name":"modifier_code_stb_exchange"},
 		{"name":"Comment", "ja_name":"コメント", "type":"ST", "length":199, "ssmix2-required":{"*":"O"}, "nho_name":"comment"}
 	],
+	"ZPD":
+	[
+		{"name":"Segment ID", "ja_name":"セグメント ID", "type":"ST", "length":3, "ssmix2-required":{"*":"R"}, "nho_name":""},
+		{"name":"Set ID", "ja_name":"セットID-ZPD", "type":"SI", "length":4, "ssmix2-required":{"*":"O"}, "nho_name":""},
+		{"name":"Dental Formula Information", "ja_name":"歯式情報", "type":"CWE", "length":250, "ssmix2-required":{"*":"O"}, "nho_name":""}
+	],
 	"ORC":
 	[
 		{"name":"Segment ID", "ja_name":"セグメント ID", "type":"ST", "length":3, "ssmix2-required":{"*":"R"}, "nho_name":"segid"},

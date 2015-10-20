@@ -90,7 +90,8 @@ def checkNumericFields(filePath, fileStr):
 
                                     #拡張型…がなぜここに存在するんだろう？副成分を割るデリミタなんてあるの？
                                     else:
-                                        print('%s-%d-%d-%d: %s' %(header,i,j,k,subComponentType))
+                                        pass
+                                        #print('%s-%d-%d-%d: %s' %(header,i,j,k,subComponentType))
 
             else:
                 print('unknown segment [%s] @ %s' % (header, filePath))
@@ -125,8 +126,9 @@ if __name__ == "__main__":
 
     import sys
     import codecs
-    
-    setup.loadIncludeFile(os.path.join('..','..','include','HL7_SEGMENT.json'),os.path.join('..','..','include','HL7_DATATYPE.json'),os.path.join('..','..','include','HL7_SEGMENTORDER.json'))
+
+    setup.loadIncludeFile_SEGMENT(os.path.join('..','..','include','HL7_SEGMENT.json'))
+    setup.loadIncludeFile_DATATYPE(os.path.join('..','..','include','HL7_DATATYPE.json'))
 
     fin = codecs.open('..\\..\\sampleData\\000\\000\\0000001\\20000401\\OMP-11\\0000001_20000401_OMP-11_123456789012345_20110701113813225_01_1', 'r', 'utf-8')
     fileStr = fin.read()

@@ -4,6 +4,7 @@ import codecs
 import datetime
 import socket
 import lib.setup
+import lib.checkCareDate
 import lib.checkFilePath
 import lib.countFiles
 import lib.checkJIS
@@ -50,6 +51,14 @@ def callFunction():
                 if lib.setup.conditionFlag != '' and lib.setup.conditionFlag != f[6]:
                     continue
 
+                #発生日時の制限(開始)
+                if lib.setup.timeStampStart > f[4]:
+                    continue
+
+                #発生日時の制限(終了)
+                if lib.setup.timeStampEnd < f[4]:
+                    continue
+
                 #チェック対象ファイルのパス
                 filePath = os.path.join(root, file)
 
@@ -62,15 +71,18 @@ def callFunction():
                     fin = codecs.open(f_utf8, 'r', 'utf-8')
                     fileStr = fin.read()
                     fin.close()
-                    
+
                 if lib.setup.callFunction in ['checkFilePath','checkAll']:
                     lib.checkFilePath.checkFilePath(root, file)
 
                 if lib.setup.callFunction in ['countFiles', 'checkAll']:
                     lib.countFiles.countFiles(file)
-                
+
                 if lib.setup.callFunction in ['checkJIS', 'checkAll']:                    
                     lib.checkJIS.checkJIS(filePath)
+
+                if lib.setup.callFunction in ['checkCareDate', 'checkAll']:
+                    lib.checkCareDate.checkCareDate(filePath, f[1], f[6], f[2], fileStr)
 
                 if lib.setup.callFunction in ['checkRequiredFields', 'checkAll']:
                     lib.checkRequiredFields.checkRequiredFields(filePath, f[2], fileStr)
@@ -104,10 +116,13 @@ def outputResults():
 
         if lib.setup.callFunction in ['countFiles', 'checkAll']:
             lib.countFiles.outputResults(lib.setup.outputFile)
-            
+         
         if lib.setup.callFunction in ['checkJIS', 'checkAll']:
             lib.checkJIS.outputResults(lib.setup.outputFile)
 
+        if lib.setup.callFunction in ['checkCareDate', 'checkAll']:
+            lib.checkCareDate.outputResults(lib.setup.outputFile)
+            
         if lib.setup.callFunction in ['checkRequiredFields', 'checkAll']:
             lib.checkRequiredFields.outputResults(lib.setup.outputFile)
 
@@ -181,6 +196,8 @@ def main(argv):
         fout.write('rootDir: %s\r\n' % lib.setup.rootDir)
         fout.write('outputFile: %s\r\n' % lib.setup.outputFile)
         fout.write('conditionFlag: %s\r\n' % lib.setup.conditionFlag)
+        fout.write('timeStampStart: %s\r\n' % lib.setup.timeStampStart)
+        fout.write('timeStampEnd: %s\r\n' % lib.setup.timeStampEnd)
         fout.write('firstN %d\r\n' % lib.setup.firstN)
         if len(lib.setup.getField) != 0:
             fout.write('getFields\r\n')
@@ -190,8 +207,11 @@ def main(argv):
         fout.close()
 
         #セットアップ
-        lib.setup.loadIncludeFile(os.path.join(pwd, '..', 'include', 'HL7_SEGMENT.json'),os.path.join(pwd, '..', 'include', 'HL7_DATATYPE.json'),os.path.join(pwd, '..', 'include', 'HL7_SEGMENTORDER.json'))
-        
+        a = lib.setup.loadIncludeFile_SEGMENT(os.path.join(pwd, '..', 'include', 'HL7_SEGMENT.json'))
+        b = lib.setup.loadIncludeFile_DATATYPE(os.path.join(pwd, '..', 'include', 'HL7_DATATYPE.json'))
+        c = lib.setup.loadIncludeFile_SEGMENTORDER(os.path.join(pwd, '..', 'include', 'HL7_SEGMENTORDER.json'))
+        d = lib.setup.loadIncludeFile_CAREDATE(os.path.join(pwd, '..', 'include', 'SSMIX_CAREDATE.json'))
+
         #処理振り分け
         callFunction()
 
