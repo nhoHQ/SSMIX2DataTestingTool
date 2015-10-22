@@ -75,7 +75,7 @@ def checkCareDate(filePath, fileDate, conditionFlag, dataType, fileStr):
         elif segmentCount != matchCount:
             careDateNg[key]['ngFile'] = filePath
             careDateNg[key]['ngDate'] = date
-    except Exception e:
+    except Exception as e:
         print(str(e))
         
     return
