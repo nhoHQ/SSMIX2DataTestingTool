@@ -30,6 +30,9 @@ def checkCareDate(filePath, fileDate, conditionFlag, dataType, fileStr):
             if len(tmp) == 2:
                 dateSegment = tmp[0]
                 dateIndex = int(tmp[1])
+            #チェック未対象メッセージ
+            else:
+                return
         else:
             print('unknown message type [%s] @ %s' % (msgType, filePath))
 
