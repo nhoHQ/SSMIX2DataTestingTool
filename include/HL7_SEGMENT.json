@@ -2,7 +2,7 @@
 	"MSH":
 	[
 		{"name":"Segment ID", "ja_name":"セグメント ID", "type":"ST", "length":3, "ssmix2-required":{"*":"R"}, "nho_name":"segid"},
-		{"name":"Field Separator", "ja_name":"フィールド区切文字", "type":"ST", "length":1, "ssmix2-required":{"*":"R"}, "nho_name":"ｆieldchar"},
+		{"name":"Field Separator", "ja_name":"フィールド区切文字", "type":"ST", "length":1, "ssmix2-required":{"*":"R"}, "nho_name":"fieldchar"},
 		{"name":"Encoding Characters", "ja_name":"コード化文字", "type":"ST", "length":4, "ssmix2-required":{"*":"R"}, "nho_name":"cdchar"},
 		{"name":"Sending Application", "ja_name":"送信アプリケーション", "type":"HD", "length":227, "ssmix2-required":{"*":"O"}, "nho_name":"sendapp"},
 		{"name":"Sending Facility", "ja_name":"送信施設", "type":"HD", "length":227, "ssmix2-required":{"*":"O"}, "nho_name":"sendhosp"},
@@ -180,7 +180,7 @@
 	"PV2":
 	[
 		{"name":"Segment ID", "ja_name":"セグメント ID", "type":"ST", "length":3, "ssmix2-required":{"*":"R"}, "nho_name":"segid"},
-		{"name":"Prior Pending Location", "ja_name":"事前保留所在場所", "type":"PL", "length":80, "ssmix2-required":{"*":"C"}, "nho_name":"pendingiocation"},
+		{"name":"Prior Pending Location", "ja_name":"事前保留所在場所", "type":"PL", "length":80, "ssmix2-required":{"*":"C"}, "nho_name":"pendinglocation"},
 		{"name":"Accommodation Code", "ja_name":"宿泊設備コード", "type":"CWE", "length":250, "ssmix2-required":{"*":"N"}, "nho_name":""},
 		{"name":"Admit Reason", "ja_name":"入院の理由", "type":"CWE", "length":250, "ssmix2-required":{"*":"N"}, "nho_name":""},
 		{"name":"Transfer Reason", "ja_name":"転科転棟の理由", "type":"CWE", "length":250, "ssmix2-required":{"*":"N"}, "nho_name":""},
@@ -445,7 +445,7 @@
 		{"name":"Explicit Time", "ja_name":"明示的な時間", "type":"TM", "length":20, "ssmix2-required":{"OMD":"N", "OMP-01":"N", "OMP-11":"N", "OMP-02":"N", "OMP-12":"N", "OML-01":"N", "OMG-01":"N", "OMG-11":"N", "OMG-02":"O", "OMG-12":"O", "OMG-03":"O", "OMG-13":"O", "*":"N"}, "nho_name":"explicit_time"},
 		{"name":"Relative Time and Units", "ja_name":"相対時間/単位", "type":"CQ", "length":20, "ssmix2-required":{"OMD":"N", "OMP-01":"N", "OMP-11":"N", "OMP-02":"N", "OMP-12":"N", "OML-01":"N", "OMG-01":"N", "OMG-11":"N", "OMG-02":"O", "OMG-12":"O", "OMG-03":"O", "OMG-13":"O", "*":"N"}, "nho_name":"relative_time"},
 		{"name":"Service Duration", "ja_name":"サービス期間", "type":"CQ", "length":20, "ssmix2-required":{"OMD":"N", "OMP-01":"O", "OMP-11":"O", "OMP-02":"N", "OMP-12":"N", "OML-01":"N", "OMG-01":"N", "OMG-11":"N", "OMG-02":"O", "OMG-12":"O", "OMG-03":"O", "OMG-13":"O", "*":"N"}, "nho_name":"service_duration"},
-		{"name":"Start date/time", "ja_name":"開始日時", "type":"TS", "length":26, "ssmix2-required":{"OMD":"O", "OMP-01":"O", "OMP-11":"O", "OMP-02":"O", "OMP-12":"O", "OML-01":"RE", "OMG-01":"O", "OMG-11":"O", "OMG-02":"O", "OMG-12":"O", "OMG-03":"O", "OMG-13":"O", "*":"N"}, "nho_name":"strattime"},
+		{"name":"Start date/time", "ja_name":"開始日時", "type":"TS", "length":26, "ssmix2-required":{"OMD":"O", "OMP-01":"O", "OMP-11":"O", "OMP-02":"O", "OMP-12":"O", "OML-01":"RE", "OMG-01":"O", "OMG-11":"O", "OMG-02":"O", "OMG-12":"O", "OMG-03":"O", "OMG-13":"O", "*":"N"}, "nho_name":"starttime"},
 		{"name":"End date/time", "ja_name":"終了日時", "type":"TS", "length":26, "ssmix2-required":{"OMD":"N", "OMP-01":"O", "OMP-11":"O", "OMP-02":"O", "OMP-12":"O", "OML-01":"O", "OMG-01":"O", "OMG-11":"O", "OMG-02":"O", "OMG-12":"O", "OMG-03":"O", "OMG-13":"O", "*":"N"}, "nho_name":"endtime"},
 		{"name":"Priority", "ja_name":"優先度", "type":"CWE", "length":250, "ssmix2-required":{"OMD":"O", "OMP-01":"N", "OMP-11":"N", "OMP-02":"N", "OMP-12":"N", "OML-01":"RE", "OMG-01":"R", "OMG-11":"R", "OMG-02":"R", "OMG-12":"R", "OMG-03":"R", "OMG-13":"R", "*":"N"}, "nho_name":"priority"},
 		{"name":"Condition text", "ja_name":"条件テキスト", "type":"TX", "length":250, "ssmix2-required":{"OMD":"N", "OMP-01":"N", "OMP-11":"N", "OMP-02":"N", "OMP-12":"N", "OML-01":"N", "OMG-01":"N", "OMG-11":"N", "OMG-02":"O", "OMG-12":"O", "OMG-03":"O", "OMG-13":"O", "*":"N"}, "nho_name":"condition_txt"},
@@ -478,7 +478,7 @@
 		{"name":"Dispense Units", "ja_name":"調剤単位", "type":"CWE", "length":250, "ssmix2-required":{"OMP-01":"R", "OMP-11":"R", "OMP-02":"O", "OMP-12":"O", "*":"N"}, "nho_name":"dispense_units"},
 		{"name":"Number of Refills", "ja_name":"同一薬発行数", "type":"NM", "length":3, "ssmix2-required":{"OMP-01":"N", "OMP-11":"N", "OMP-02":"N", "OMP-12":"N", "*":"N"}, "nho_name":""},
 		{"name":"Ordering Provider's DEA Number", "ja_name":"オーダ発行者の DEA 番号", "type":"XCN", "length":250, "ssmix2-required":{"OMP-01":"O", "OMP-11":"O", "OMP-02":"O", "OMP-12":"O", "*":"N"}, "nho_name":"order_DEA"},
-		{"name":"Pharmacist/Treatment Supplier's Verifier ID", "ja_name":"薬剤師/治療提供者の検証 ID", "type":"XCN", "length":250, "ssmix2-required":{"OMP-01":"O", "OMP-11":"O", "OMP-02":"O", "OMP-12":"O", "*":"N"}, "nho_name":"velify_pharmacist"},
+		{"name":"Pharmacist/Treatment Supplier's Verifier ID", "ja_name":"薬剤師/治療提供者の検証 ID", "type":"XCN", "length":250, "ssmix2-required":{"OMP-01":"O", "OMP-11":"O", "OMP-02":"O", "OMP-12":"O", "*":"N"}, "nho_name":"verify_pharmacist"},
 		{"name":"Prescription Number", "ja_name":"処方箋番号", "type":"ST", "length":20, "ssmix2-required":{"OMP-01":"O", "OMP-11":"O", "OMP-02":"O", "OMP-12":"O", "*":"N"}, "nho_name":"prescription_number"},
 		{"name":"Number of Refills Remaining", "ja_name":"薬剤残数", "type":"NM", "length":20, "ssmix2-required":{"OMP-01":"O", "OMP-11":"O", "OMP-02":"O", "OMP-12":"O", "*":"N"}, "nho_name":"refills_remaining"},
 		{"name":"Number of Refills/Doses Dispensed", "ja_name":"調剤済薬品数または投与数", "type":"NM", "length":20, "ssmix2-required":{"OMP-01":"O", "OMP-11":"O", "OMP-02":"O", "OMP-12":"O", "*":"N"}, "nho_name":"doses_dispensed"},
